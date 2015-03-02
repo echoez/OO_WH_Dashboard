@@ -1,0 +1,112 @@
+
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+<title>UG Operations</title>
+<link href='style.css' rel='stylesheet' type='text/css' />
+<link rel="stylesheet" href="bootstrap.min.css">
+<link rel="stylesheet" href="bootstrap-table.css">
+</head><body>
+
+<table id='depts'>
+<tr>
+  <td id='dept'><a href="">HOME</a></td>
+  <td></td>
+  <td id='dept'><a href="">OB</a></td>
+  <td id='dept'><a href="">IB</a></td>
+  <td id='dept'><a href="">CS</a></td>
+  <td id='dept'><a href="">DS</a></td>
+  <td id='dept'><a href="">ITC</a></td>
+  <td id='dept'><a href="">SECURITY</a></td>
+  <td id='dept'><a href="">TECHOPS</a></td>  
+  <td id='dept'><a href="">ADMIN</a></td>
+  <td id='dept'><a href="">TRAINING</a></td>
+  <td id='dept'><a href="">LOGOUT</a></td>  
+</tr>
+</table>
+
+<div id='wrapper'>
+<div id='top'><div id='logo'></div>
+</div>
+
+<div id='content'><div id='left-nav'><br>
+<h1>Helpful Links</h1>
+<br>
+<ul>
+<li><a href=''>Admin 6</a></li>
+<li><a href=''>Outlook Web App</a></li>
+<li><a href='' target='_blank'>Zendesk</a></li>
+<li><a href=''>Sample Dashboard</a></li>
+<li><a href=''>Shipments Aging</a></li>
+</ul></div>
+<div id='main'>
+
+<div>
+    <label><input id="hover" type="checkbox" checked=""> hover</label>
+    <label><input id="striped" type="checkbox"> striped</label>
+    <label><input id="condensed" type="checkbox"> condensed</label>
+</div>
+<table id="table-style" data-url="data1.json" data-height="400" data-row-style="rowStyle">
+    <thead>
+    <tr>
+        <th data-field="id" class="col-md-2">Item ID</th>
+        <th data-field="name" class="col-md-6">
+            <i class="glyphicon glyphicon-star"></i>
+            Item Name
+        </th>
+        <th data-field="price" class="col-md-4">
+            <i class="glyphicon glyphicon-heart"></i>
+            Item Price
+        </th>
+    </tr>
+    </thead>
+</table>
+<script>
+    $(function () {
+        $('#hover, #striped, #condensed').click(function () {
+            var classes = 'table';
+
+            if ($('#hover').prop('checked')) {
+                classes += ' table-hover';
+            }
+            if ($('#condensed').prop('checked')) {
+                classes += ' table-condensed';
+            }
+            $('#table-style').bootstrapTable('destroy')
+                .bootstrapTable({
+                    classes: classes,
+                    striped: $('#striped').prop('checked')
+                });
+        });
+    });
+
+    function rowStyle(row, index) {
+        var classes = ['active', 'success', 'info', 'warning', 'danger'];
+
+        if (index % 2 === 0 && index / 2 < classes.length) {
+            return {
+                classes: classes[index / 2]
+            };
+        }
+        return {};
+    }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<script src="bootstrap-table.js">
+
+<div id='bottom'>
+Webmaster: Warmmilk</div>
+</div>
+</body>
+</html>
