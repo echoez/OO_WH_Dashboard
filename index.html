@@ -3,11 +3,12 @@
 <head>
 <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
 <title>UG Operations</title>
-<link href='style.css' rel='stylesheet' type='text/css' />
-  <link rel="stylesheet" href="blue/style.css" type="text/css" media="print, projection, screen" />
-<script type="text/javascript" src="jquery-1.11.2.js"></script>
-<script type="text/javascript" src="jquery.tablesorter.js"></script>
-<script type="text/javascript" src="script.js"></script>
+<link href='css/style.css' rel='stylesheet' type='text/css' />
+<link href='css/mystyle.css' rel='stylesheet' type='text/css' />
+  <link rel="stylesheet" href="css/blue/style.css" type="text/css" media="print, projection, screen" />
+<script type="text/javascript" src="js/jquery-1.11.2.js"></script>
+<script type="text/javascript" src="js/jquery.tablesorter.js"></script>
+<script type="text/javascript" src="js/script.js"></script>
 
 </head><body>
 
@@ -44,11 +45,26 @@
 </ul></div>
 <div id='main'>
 
-         
+<h1 class="mikeh1">Outstanding Orders - 20 Day Report </h1>
+<h2 class="mikeh2">This report displays all outstanding orders that were successfully exported but did not get shipped or settled </h2>
+<div class="table_container">    
+
 <table id="myTable" cellspacing="1" class="tablesorter">
-<thead><tr class="tableizer-firstrow"><th>ORDER_ID</th><th>SHIPMENT_ID</th><th>STATUS</th><th>WORKTYPE</th><th>AUTHORIZED</th><th>EXPORT</th><th>PICK_START</th><th>PICK_END</th><th>GIFT_BOX</th><th>PROSHIP</th><th>TRACKING</th><th># of ZD Tickets</th></tr></thead>
+<thead><th>ORDER_ID</th><th>SHIPMENT_ID</th><th>STATUS</th><th>WORKTYPE</th><th>AUTHORIZED</th><th>EXPORT</th><th>PICK_START</th><th>PICK_END</th><th>GIFT_BOX</th><th>PROSHIP</th><th>TRACKING</th><th># of ZD Tickets</th></thead>
  <tbody>
- <tr><td>4881037</td><td>5185655</td><td>Not Settled</td><td>Regular, Gift</td><td>2/27/15</td><td>2/27/15 17:37</td><td>2/27/15 17:43</td><td>2/27/15 17:46</td><td>2/27/15 18:16</td><td>&nbsp;</td><td>1Z5395A3YW37257842</td><td>0</td></tr>
+ <tr><td>4881037</td><td>5185655</td><td>Not Settled</td><td>Regular, Gift</td><td>2/27/15</td><td>2/27/15 17:37</td><td>2/27/15 17:43</td><td>2/27/15 17:46</td><td>2/27/15 18:16</td><td>&nbsp;</td><td>1Z5395A3YW37257842</td><td><form name="menuform">
+<select name="menu1">
+<option value="" selected></option>
+<option value="">Re-queue</option>
+<option value="">Settle</option>
+<option value="">CS Needed</option>
+<option value="">Oversold</option>
+</select>
+<input type="button" name="Submit" value="Go" 
+onClick="top.location.href = this.form.menu1.options[this.form.menu1.selectedIndex].value;
+return false;">
+</form>
+  </td></tr>
  <tr><td>4881040</td><td>5185658</td><td>Not Settled</td><td>Regular, Single-Line</td><td>2/27/15</td><td>2/27/15 17:37</td><td>2/27/15 17:43</td><td>2/27/15 17:53</td><td>&nbsp;</td><td>&nbsp;</td><td>1Z5395A3YW37256816</td><td>3</td></tr>
  <tr><td>4881044</td><td>5185663</td><td>Not Settled</td><td>Regular, Single-Line</td><td>2/27/15</td><td>2/27/15 17:37</td><td>2/27/15 17:43</td><td>2/27/15 17:55</td><td>&nbsp;</td><td>&nbsp;</td><td>1Z5395A3YW37256932</td><td>0</td></tr>
  <tr><td>4881045</td><td>5185664</td><td>Not Settled</td><td>Regular, Single-Line</td><td>2/27/15</td><td>2/27/15 17:37</td><td>2/27/15 17:43</td><td>2/27/15 17:46</td><td>&nbsp;</td><td>&nbsp;</td><td>1Z5395A3YW37257360</td><td>0</td></tr>
@@ -636,6 +652,7 @@
  <tr><td>4880200</td><td>5184742</td><td>Not Settled</td><td>Regular, Gift</td><td>2/26/15</td><td>2/27/15 10:14</td><td>2/27/15 12:18</td><td>2/27/15 12:20</td><td>2/27/15 14:45</td><td>&nbsp;</td><td>1Z5395A31337255207</td><td>0</td></tr>
  </tbody>
 </table>
+</div>
 
 
 <!-- Latest compiled and minified JavaScript -->
